@@ -8,7 +8,7 @@ pipeline {
 
             steps {
 
-                bat 'mvn clean package -DskipTests'
+                sh 'mvn clean package -DskipTests'
             }
         }
 
@@ -16,7 +16,7 @@ pipeline {
 
             steps {
 
-                bat 'docker build -t rag-app .'
+                sh 'docker build -t rag-app .'
             }
         }
 
@@ -24,7 +24,7 @@ pipeline {
 
             steps {
 
-                bat 'docker-compose up -d'
+                sh 'docker-compose up -d'
             }
         }
     }
